@@ -19,11 +19,13 @@
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
-        echo "ban vua dang nhap dung tai khoan roi.";
-    } else {
-        echo "ban  nhap sai roi.";
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if (isset($_GET['username']) && isset($_GET['username'])) {
+        if ($_GET['username'] == 'admin' && $_GET['password'] == 'admin') {
+            echo "ban vua dang nhap dung tai khoan roi.";
+        } else {
+            echo "ban  nhap sai roi.";
+        }
     }
 
 }
@@ -40,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!--<br>-->
 <!--<input type="password" name="pass" placeholder="Nhap password">-->
 
-<form method="POST">
+<form method="GET">
     <div class="form-group">
         <label for="Username">Username</label>
         <input type="text" class="form-control" name="username" placeholder="Enter username">
